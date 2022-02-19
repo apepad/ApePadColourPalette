@@ -1,0 +1,272 @@
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+</head>
+<body>
+<ul class="palette">
+  <li class="swatch select" data-color="#4cadeb">
+    <ol>
+      <li><b>RGB</b><i></i></li>
+      <li><b>HSL</b><i></i></li>
+      <li><b>HEX</b><i></i></li>
+    </ol>
+  </li>
+  <li class="swatch" data-color="#7ac2f0">
+    <ol>
+      <li><b>RGB</b><i></i></li>
+      <li><b>HSL</b><i></i></li>
+      <li><b>HEX</b><i></i></li>
+    </ol>
+  </li>
+  <li class="swatch" data-color="#a8d7f5">
+    <ol>
+      <li><b>RGB</b><i></i></li>
+      <li><b>HSL</b><i></i></li>
+      <li><b>HEX</b><i></i></li>
+    </ol>
+  </li>
+  <li class="swatch" data-color="#eb8a4c">
+    <ol>
+      <li><b>RGB</b><i></i></li>
+      <li><b>HSL</b><i></i></li>
+      <li><b>HEX</b><i></i></li>
+    </ol>
+  </li>
+  <li class="swatch" data-color="#f0a87a">
+    <ol>
+      <li><b>RGB</b><i></i></li>
+      <li><b>HSL</b><i></i></li>
+      <li><b>HEX</b><i></i></li>
+    </ol>
+  </li>
+  <li class="swatch" data-color="#f5c6a8">
+    <ol>
+      <li><b>RGB</b><i></i></li>
+      <li><b>HSL</b><i></i></li>
+      <li><b>HEX</b><i></i></li>
+    </ol>
+  </li>
+  <li class="swatch" data-color="#9b9b9b">
+    <ol>
+      <li><b>RGB</b><i></i></li>
+      <li><b>HSL</b><i></i></li>
+      <li><b>HEX</b><i></i></li>
+    </ol>
+  </li>
+  <li class="swatch" data-color="#b5b5b5">
+    <ol>
+      <li><b>RGB</b><i></i></li>
+      <li><b>HSL</b><i></i></li>
+      <li><b>HEX</b><i></i></li>
+    </ol>
+  </li>
+</ul>
+</body>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One);
+body {
+  perspective: 600px;  
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 23px;
+}
+.palette {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 50%;
+  margin-left: -30px;
+  top: 40px;
+  width: 60px;
+}
+.swatch:last-child:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: white;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  margin-left: -5px;
+  z-index: 100;
+  border-radius: 50%;
+}
+.swatch {
+  height: 260px;
+  width: 100px;
+  transition: 800ms all;
+  display: block;
+  position: absolute;
+  left: 0; top: 0;
+  border-radius: 6px;
+  transform-origin: 50% 230px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.swatch span {
+  color: rgba(255,255,255,.3);
+  font-size: 50px;
+  display: block;
+  position: absolute;
+  left: -19px;
+  top: 52px;
+  text-transform: uppercase;
+  transform: rotate(90deg);
+  transition: 200ms color;
+}
+.swatch:hover span {
+  color: rgba(255,255,255,.7);
+}
+.swatch ol {
+  border-radius: 0 0 6px 6px;
+  position: absolute;
+  list-style: none;
+  margin: 0; padding: 10px;
+  left: 100px;
+  top: 8px;
+  transition: 600ms all;
+  transform: rotateZ(90deg) rotateX(320deg);
+  transform-origin: 0 0;
+  color: #FFFFFF;
+  background: inherit;
+  box-shadow: 0px 5px 20px rgba(0,0,0,.3),
+    0 0 0 100px rgba(0,0,0,.2) inset;
+  width: 130px;
+  height: 80px;
+  pointer-events: none;
+  transition-delay: 0ms;
+  transform-style: preserve-3d;  
+}
+.swatch ol:after {
+  content: '';
+  width: 148px; height: 98px;
+  background: inherit;
+  position: absolute;
+  left: 1px; top: 1px;
+  transform: translateZ(-1px);
+  border-radius: inherit;
+  box-shadow: 0 0 0 100px rgba(0,0,0,.2) inset;
+}
+.swatch ol li {
+  overflow: hidden;
+}
+.swatch ol b {
+  display: block;
+  width: 39px;
+  float: left;
+  font-weight: normal;
+}
+.swatch ol i {
+  font-style: normal;
+  text-transform: uppercase;
+}
+.swatch.select {
+  transform: rotate(-90deg) !important;
+}
+.swatch.select ol {
+  transform: rotateZ(90deg) rotateX(5deg) !important;
+  transition: 1000ms all;
+  transition-delay: 600ms;
+}
+.swatch:nth-child(1) {
+  transform: rotate(-42deg);
+}
+.swatch:nth-child(2) {
+  transform: rotate(-30deg);
+}
+.swatch:nth-child(3) {
+  transform: rotate(-18deg);
+}
+.swatch:nth-child(4) {
+  transform: rotate(-6deg);
+}
+.swatch:nth-child(5) {
+  transform: rotate(6deg);
+}
+.swatch:nth-child(6) {
+  transform: rotate(18deg);
+}
+.swatch:nth-child(7) {
+  transform: rotate(30deg);
+}
+.swatch:nth-child(8) {
+  transform: rotate(42deg);
+}
+</style>
+
+
+<script>
+/*
+18-06: 
+- added large hex code with hover effect
+- made the backside of the color card invisible
+- fine-tuned the styling of the color cards
+
+Oh, and this JS is solely for calculating the color values and the angles of the swatches because I am too lazy to look them up and hardcode everything.
+*/
+$('.swatch').each(function(i,e){
+  var hex = $(this).data().color;
+  $(this).css({
+    'backgroundColor':hex
+  }).click(function(event){
+    $('.swatch').removeClass('select');
+    $(this).toggleClass('select');
+  }).append('<span>'+hex+'</span>');
+  
+  $(this).find('ol li:eq(2) i').html(hex);
+  var rgb = hexToRgb(hex);
+  $(this).find('ol li:eq(0) i').html(Math.ceil(rgb.r)+', '+Math.ceil(rgb.g)+', '+Math.ceil(rgb.b));
+  var hsl = rgb2hsl([222,63,126]);
+  $(this).find('ol li:eq(1) i').html(Math.ceil(hsl[0])+', '+Math.ceil(hsl[1])+', '+Math.ceil(hsl[2]));
+});
+
+
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
+function rgb2hsl(rgbArr){
+    var r1 = rgbArr[0] / 255;
+    var g1 = rgbArr[1] / 255;
+    var b1 = rgbArr[2] / 255;
+ 
+    var maxColor = Math.max(r1,g1,b1);
+    var minColor = Math.min(r1,g1,b1);
+    //Calculate L:
+    var L = (maxColor + minColor) / 2 ;
+    var S = 0;
+    var H = 0;
+    if(maxColor != minColor){
+        //Calculate S:
+        if(L < 0.5){
+            S = (maxColor - minColor) / (maxColor + minColor);
+        }else{
+            S = (maxColor - minColor) / (2.0 - maxColor - minColor);
+        }
+        //Calculate H:
+        if(r1 == maxColor){
+            H = (g1-b1) / (maxColor - minColor);
+        }else if(g1 == maxColor){
+            H = 2.0 + (b1 - r1) / (maxColor - minColor);
+        }else{
+            H = 4.0 + (r1 - g1) / (maxColor - minColor);
+        }
+    }
+ 
+    L = L * 100;
+    S = S * 100;
+    H = H * 60;
+    if(H<0){
+        H += 360;
+    }
+    var result = [H, S, L];
+    return result;
+}
+</script>
